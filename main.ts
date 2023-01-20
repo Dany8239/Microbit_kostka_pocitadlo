@@ -28,6 +28,54 @@ basic.forever(function () {
     if (Mode == 0) {
         basic.showNumber(Score)
     } else {
-        basic.showNumber(RandomNum)
+        if (RandomNum == 1) {
+            basic.showLeds(`
+                . . . . .
+                . . . . .
+                . . # . .
+                . . . . .
+                . . . . .
+                `)
+        } else if (RandomNum == 2) {
+            basic.showLeds(`
+                . . . . #
+                . . . . .
+                . . . . .
+                . . . . .
+                # . . . .
+                `)
+        } else if (RandomNum == 3) {
+            basic.showLeds(`
+                . . . . #
+                . . . . .
+                . . # . .
+                . . . . .
+                # . . . .
+                `)
+        } else if (RandomNum == 4) {
+            basic.showLeds(`
+                # . . . #
+                . . . . .
+                . . . . .
+                . . . . .
+                # . . . #
+                `)
+        } else if (RandomNum == 5) {
+            basic.showLeds(`
+                # . . . #
+                . . . . .
+                . . # . .
+                . . . . .
+                # . . . #
+                `)
+        } else {
+            basic.showLeds(`
+                # . # . #
+                . . . . .
+                . . . . .
+                . . . . .
+                # . # . #
+                `)
+        }
     }
 })
