@@ -18,64 +18,67 @@ input.onButtonPressed(Button.B, function () {
 input.onGesture(Gesture.Shake, function () {
     if (Mode == 1) {
         RandomNum = randint(1, 6)
+    } else {
+        Score = 0
     }
+    basic.clearScreen()
+    basic.pause(1500)
 })
 let RandomNum = 0
+let Score = 0
 let Mode = 0
 Mode = 0
-let Score = 0
+Score = 0
 basic.forever(function () {
     if (Mode == 0) {
         basic.showNumber(Score)
+    } else if (RandomNum == 1) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . . .
+            . . . . .
+            `)
+    } else if (RandomNum == 2) {
+        basic.showLeds(`
+            . . . . #
+            . . . . .
+            . . . . .
+            . . . . .
+            # . . . .
+            `)
+    } else if (RandomNum == 3) {
+        basic.showLeds(`
+            . . . . #
+            . . . . .
+            . . # . .
+            . . . . .
+            # . . . .
+            `)
+    } else if (RandomNum == 4) {
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            . . . . .
+            . . . . .
+            # . . . #
+            `)
+    } else if (RandomNum == 5) {
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            . . # . .
+            . . . . .
+            # . . . #
+            `)
     } else {
-        if (RandomNum == 1) {
-            basic.showLeds(`
-                . . . . .
-                . . . . .
-                . . # . .
-                . . . . .
-                . . . . .
-                `)
-        } else if (RandomNum == 2) {
-            basic.showLeds(`
-                . . . . #
-                . . . . .
-                . . . . .
-                . . . . .
-                # . . . .
-                `)
-        } else if (RandomNum == 3) {
-            basic.showLeds(`
-                . . . . #
-                . . . . .
-                . . # . .
-                . . . . .
-                # . . . .
-                `)
-        } else if (RandomNum == 4) {
-            basic.showLeds(`
-                # . . . #
-                . . . . .
-                . . . . .
-                . . . . .
-                # . . . #
-                `)
-        } else if (RandomNum == 5) {
-            basic.showLeds(`
-                # . . . #
-                . . . . .
-                . . # . .
-                . . . . .
-                # . . . #
-                `)
-        } else {
-            basic.showLeds(`
-                # . # . #
-                . . . . .
-                . . . . .
-                . . . . .
-                # . # . #
-                `)
-        }
+        basic.showLeds(`
+            # . # . #
+            . . . . .
+            . . . . .
+            . . . . .
+            # . # . #
+            `)
     }
 })
